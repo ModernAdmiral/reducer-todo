@@ -1,9 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 
-const AddButton = styled.button``;
-
-const ClearButton = styled.button``;
 
 const TodoForm = props => {
   const [newItem, setNewItem] = useState();
@@ -15,9 +11,7 @@ const TodoForm = props => {
   const handleSubmit = event => {
     event.preventDefault();
     props.dispatch({ type: "ADD_TODO", payload: newItem });
-    setNewItem("");
-  };
-
+    setNewItem(button
   const clearCompleted = event => {
     event.preventDefault();
     props.dispatch({ type: "CLEAR_COMPLETED" });
@@ -31,12 +25,12 @@ const TodoForm = props => {
         value={newItem}
         onChange={handleChange}
       />
-      <AddButton onClick={handleSubmit}>
+      <button onClick={handleSubmit}>
         <label>add</label>
-      </AddButton>
-      <ClearButton onClick={clearCompleted}>
+      </button>
+      <button onClick={clearCompleted}>
         <label>clear</label>
-      </ClearButton>
+      </button>
     </form>
   );
 };
